@@ -1,6 +1,10 @@
 ('D:\\Users\\admin\\PycharmProjects\\Generate Properties and '
  'MSDS\\build\\Generate Properties and MSDS\\PYZ-00.pyz',
- [('_compat_pickle',
+ [('PubChem',
+   'D:\\Users\\admin\\PycharmProjects\\Generate Properties and '
+   'MSDS\\PubChem.py',
+   'PYMODULE'),
+  ('_compat_pickle',
    'C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_compat_pickle.py',
    'PYMODULE'),
   ('_compression',
@@ -303,9 +307,6 @@
    'PYMODULE'),
   ('tkinter.constants',
    'C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tkinter\\constants.py',
-   'PYMODULE'),
-  ('tkinter.font',
-   'C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tkinter\\font.py',
    'PYMODULE'),
   ('tkinter.messagebox',
    'C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tkinter\\messagebox.py',
