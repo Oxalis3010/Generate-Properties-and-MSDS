@@ -91,6 +91,7 @@ class PubChem:
         result.append(self.getCAS())
         result.append(self.getFormula())
         result.append(self.getMolar())
-        result.append(self.getDensity())
+        if self.density != "":
+            result.append(self.getDensity())
         result.append(self.getHazard())
         return "\n".join(result)
