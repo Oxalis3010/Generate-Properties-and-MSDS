@@ -7,6 +7,7 @@ class PubChem:
         self.molar = ""
         self.CAS = ""
         self.formula = ""
+        self.density = ""
 
     def find(self):
         self.findCAS()
@@ -14,6 +15,7 @@ class PubChem:
         self.findFormula()
         self.findHazard()
         self.findMolar()
+        self.fineDensity()
 
     def findHazard(self):
         try:
@@ -55,6 +57,16 @@ class PubChem:
         except ValueError:
             self.formula = "Chemical Formula not found"
 
+    def fineDensity(self):
+        try:
+            section_point = self.page.index("3.2.9 Density")
+            self.density = "Density: " + self.page[section_point + 5]
+            if self.density.split(" ").pop(2) != "g/cu":
+                self.density = ""
+        except ValueError:
+            self.density = ""
+
+
     def getChemical(self):
         return self.chemical
 
@@ -70,11 +82,15 @@ class PubChem:
     def getFormula(self):
         return self.formula
 
+    def getDensity(self):
+        return self.density
+
     def __str__(self):
         result = []
         result.append(self.getChemical())
         result.append(self.getCAS())
         result.append(self.getFormula())
         result.append(self.getMolar())
+        result.append(self.getDensity())
         result.append(self.getHazard())
         return "\n".join(result)
