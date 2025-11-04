@@ -1,3 +1,5 @@
+import re
+
 class PubChem:
     def __init__(self, page):
         self.page = page
@@ -53,9 +55,22 @@ class PubChem:
     def findFormula(self):
         try:
             point = self.page.index("Molecular Formula\t")
-            self.formula = "Chemical Formula: " + self.page[point + 1]
+            formula = self.page[point + 1]
+            better_formula = self.smart_subscript(formula)
+            self.formula = "Chemical Formula: " + better_formula
         except ValueError:
             self.formula = "Chemical Formula not found"
+
+    def smart_subscript(self, text):
+        subscript_map = {
+            '0': '₀', '1': '₁', '2': '₂', '3': '₃', '4': '₄',
+            '5': '₅', '6': '₆', '7': '₇', '8': '₈', '9': '₉'
+        }
+
+        result = re.sub(r'([A-Za-z])(\d+)',
+                        lambda m: m.group(1) + ''.join(subscript_map[d] for d in m.group(2)),
+                        text)
+        return result
 
     def fineDensity(self):
         try:

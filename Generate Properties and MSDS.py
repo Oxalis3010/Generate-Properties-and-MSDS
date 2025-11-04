@@ -18,7 +18,7 @@ class MainFrame:
         # 显示初始提示信息
         self.root.after(100, lambda: messagebox.showinfo(
             "使用说明",
-            "找到要生成的试剂对应的PubChem页面，ctrl+a全选复制，粘贴到输入框中，点确定输出结果，目前只能输出分子量、化学式、CAS和hazard，CAS可能会有问题，其他的应该还好"))
+            "找到要生成的试剂对应的PubChem页面，ctrl+a全选复制，粘贴到输入框中，点确定输出结果，目前只能输出分子量、化学式、密度、CAS和hazard，密度大概率出问题，其他的应该还好"))
         self.setup_ui()
 
 
